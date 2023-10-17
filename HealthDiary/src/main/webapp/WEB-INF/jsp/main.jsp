@@ -1,7 +1,8 @@
+ <%-- メイン画面のビュー --%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-    <%-- メイン画面のビュー --%>
     <%@ page import ="model.User" %>
     
     <%-- セッションスコープに保存されたユーザー情報を取得 --%>
@@ -16,6 +17,12 @@
 <body>
 
 <h1>メイン</h1>
+
+<p>
+	<%= loginUser.getName() %> さん、ログイン中
+	
+	<a href="Logout">LOGOUT</a>
+</p>
 
 </body>
 </html>
