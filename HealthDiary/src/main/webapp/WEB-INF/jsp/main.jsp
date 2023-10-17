@@ -21,7 +21,7 @@
 <p>
 	<%= loginUser.getName() %> さん、ログイン中
 	
-	<a href="Logout">LOGOUT</a>
+	<a href="LogoutServlet">LOGOUT</a>
 </p>
 
 </body>
