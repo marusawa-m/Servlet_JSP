@@ -34,11 +34,12 @@
 		体重:<input type="text" name="weight">(kg)
 		<br>
 		
-		<%-- 体調の評価ボタン --%>
+		<%-- 体調の評価ボタンをここに入れる --%>
 	
 		<%-- 以下メモ欄 --%>
+		メモ欄:
 		<form action="Main" method="post">
-		<input type="text" name="text">
+		<textarea name="example5" cols="30" rows="5" tabindex="1"></textarea>
 		<input type="submit" value="確認">
 		</form>
 		<% for (Mutter mutter : mutterList) { %>
