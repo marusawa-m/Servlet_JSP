@@ -27,7 +27,16 @@
 	<a href="LogoutServlet">LOGOUT</a>
 </p>
 	<p><a href="Main">更新</a></p>
+	
+		<%-- BMI測定 --%>
+		身長:<input type="text" name="height">(cm)
+		<br>
+		体重:<input type="text" name="weight">(kg)
+		<br>
 		
+		<%-- 体調の評価ボタン --%>
+	
+		<%-- 以下メモ欄 --%>
 		<form action="Main" method="post">
 		<input type="text" name="text">
 		<input type="submit" value="確認">
