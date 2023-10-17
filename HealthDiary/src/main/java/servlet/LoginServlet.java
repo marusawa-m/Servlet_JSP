@@ -16,11 +16,11 @@ import model.LoginLogic;
 import model.User;
 
 
-@WebServlet("/LoginServlet")
+@WebServlet("/Login")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-	
+
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		
@@ -30,7 +30,7 @@ public class LoginServlet extends HttpServlet {
 		String pass = request.getParameter("pass");
 		
 		
-		// Userインスタンスの生成
+		// Userインスタンス(ユーザー情報)の生成
 		User user = new User(name, pass);
 		
 		
@@ -41,17 +41,18 @@ public class LoginServlet extends HttpServlet {
 		
 		// ログイン成功時の処理
 		if (isLogin) {
-			
-			//ユーザー情報をセッションスコープに保存
+			// ユーザー情報をセッションスコープに保存
 			HttpSession session = request.getSession();
 			session.setAttribute("loginUser", user);
-			
 		}
 		
 		
-		// ログイン画面にフォワード
+		// ログイン結果画面にフォワード
 		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/loginResult.jsp");
 		dispatcher.forward(request, response);
+		
+
 	}
+
 
 }
