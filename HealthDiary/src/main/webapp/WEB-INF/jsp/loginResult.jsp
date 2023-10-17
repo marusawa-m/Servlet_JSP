@@ -1,7 +1,8 @@
+<%-- ログイン成功画面のビュー --%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-    <%-- ログイン成功画面のビュー --%>
     <%@ page import="model.User" %>
     
     <%-- セッションスコープからユーザー情報を取得 --%>
