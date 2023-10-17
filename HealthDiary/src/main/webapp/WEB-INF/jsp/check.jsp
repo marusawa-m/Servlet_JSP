@@ -3,7 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-    <%@ page import="model.Health" %>
+    <%@ page import="model.User, model.Mutter, model.Health, java.util.List" %>
     
     <%-- リクエストスコープに保存されたHealthインスタンスを取得 --%>
     <% Health health = (Health)request.getAttribute("health"); %>
