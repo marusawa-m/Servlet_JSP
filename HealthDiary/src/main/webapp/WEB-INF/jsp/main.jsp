@@ -39,7 +39,13 @@
 		<%-- 以下メモ欄 --%>
 		メモ欄:
 		<form action="Main" method="post">
+		
+		<%-- 以下のはコメント欄（広め） --%>
 		<textarea name="example5" cols="30" rows="5" tabindex="1"></textarea>
+		
+		<%-- 以下のは元のつぶやき欄 --%>
+		<%-- <input type="text" name="text" > --%>
+		
 		<input type="submit" value="確認">
 		</form>
 		<% for (Mutter mutter : mutterList) { %>
