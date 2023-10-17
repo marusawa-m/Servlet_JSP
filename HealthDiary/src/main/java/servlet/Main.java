@@ -81,8 +81,8 @@ public class Main extends HttpServlet {
 		// BMIチェックをして結果を設定
 			BmiCheckLogic bmiCheckLogic = new BmiCheckLogic();
 			bmiCheckLogic.execute(health);
-				
-			// リクエストスコープに保存
+
+			// セッションスコープに保存
 			request.setAttribute("health", health);
 			
 			
@@ -97,11 +97,12 @@ public class Main extends HttpServlet {
 			// セッションスコープに保存されたユーザー情報を取得
 			HttpSession session = request.getSession();
 			User loginUser = (User)session.getAttribute("loginUser");
-			
+			Health health = (Health)session.getAttribute("Health");			// この行は？
 		
 			// 投稿を作成して投稿リストに追加
 		// ここにBMIの算出を入れたい
 			Mutter mutter = new Mutter(loginUser.getName(), text);
+			Health health = new Health(health.getBmi(), health.getBodyType());	// この行はsetができない
 			PostMutterLogic postMutterLogic = new PostMutterLogic();
 			postMutterLogic.execute(mutter, mutterList);
 			
