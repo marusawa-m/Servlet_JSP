@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
     
     <%-- ログイン成功画面のビュー --%>
-    <%@ page import="model.User" %
+    <%@ page import="model.User" %>
     
     <%-- セッションスコープからユーザー情報を取得 --%>
     <% User loginUser = (User)session.getAttribute("loginUser"); %>
