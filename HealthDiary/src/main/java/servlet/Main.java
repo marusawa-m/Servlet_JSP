@@ -15,6 +15,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import model.BmiCheckLogic;
+import model.Health;
 import model.Mutter;
 import model.PostMutterLogic;
 import model.User;
@@ -26,6 +28,7 @@ public class Main extends HttpServlet {
        
 
 	// 情報を取得するためのGET()
+	// ログインされているかの確認をする、メイン画面ビューを出力するまでの道筋
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		
@@ -58,12 +61,11 @@ public class Main extends HttpServlet {
 		}
 
 	}
-	
-// ここまでログインされているかの確認をする、メイン画面ビューを出力するまでの道筋
+
 	
 	
 // 以下未定
-	
+// 投稿をするためのメソッド	
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
@@ -71,56 +73,61 @@ public class Main extends HttpServlet {
 		// リクエストパラメータの取得
 		request.setCharacterEncoding("UTF-8");
 		String text = request.getParameter("text");
-		String weight = request.getParameter("weight");
-		String height = request.getParameter("height");
+		String weightParam = request.getParameter("weight");
+		String heightParam = request.getParameter("height");
 		
-		
-			// 入力値チェック
-		if (text != null && text.length() != 0) {
-//		
-//		// 身長、体重の入力値をプロパティに設定
-//		Health health = new Health();
-//		health.setHeight(Double.parseDouble(height));
-//		health.setWeight(Double.parseDouble(weight));
-//		
-//		// BMIチェックをして結果を設定
-//			BmiCheckLogic bmiCheckLogic = new BmiCheckLogic();
-//			bmiCheckLogic.execute(health);
-//
-//			// セッションスコープに保存
-//			request.setAttribute("health", health);
+		   double bmi = 0.0;  // 初期化
+		   String bodyType = "";  // 初期化
+
+		if (weightParam != null && !weightParam.trim().isEmpty() && heightParam 
+				!= null && !heightParam.trim().isEmpty()) {
+		    double weight = Double.parseDouble(weightParam);
+		    double height = Double.parseDouble(heightParam);
 			
+			// 身長、体重の入力値をプロパティに設定
+			Health health = new Health();
+			health.setHeight(height);
+			health.setWeight(weight);
+	
+			// BMIの計算したBmi~インスタンスを取得
+			BmiCheckLogic logic = new BmiCheckLogic();
+			logic.execute(health);
+	
+			// BMIとbodyTypeを取得
+		    bmi = health.getBmi();
+		    bodyType = health.getBodyType();
+		} else if (weightParam == null || heightParam == null) {
 			
-			// アプリケーションスコープに保存された投稿を取得
-			ServletContext application = this.getServletContext();
-			List<Mutter> mutterList = (List<Mutter>)application.getAttribute("mutterList");
+			System.out.println("weightParam または heightParam がnullです");
 			
-			// セッションスコープに保存されたユーザー情報を取得
-			HttpSession session = request.getSession();
-			User loginUser = (User)session.getAttribute("loginUser");
-//			Health health1 = (Health)session.getAttribute("Health");			// この行は？
-		
-			// 投稿を作成して投稿リストに追加
-		// ここにBMIの算出を入れたい
-			Mutter mutter = new Mutter(loginUser.getName(), text);
-			// この以下の行はsetができない
-//			Health health2 = new Health(BmiCheckLogic.getBmi(), BmiCheckLogic.getBodyType());
-//			double bmi = health.getBmi();
-//			String bodyType = health.getBodyType();
-			PostMutterLogic postMutterLogic = new PostMutterLogic();
-			postMutterLogic.execute(mutter, mutterList);
-			
-			
-			// アプリケーションスコープに投稿リストを保存
-			application.setAttribute("mutterList", mutterList);
 		}
 		
+		else {
+		    System.out.println("weightParam または heightParam が無効な値です");
+		}
 		
-		// 確認画面にフォワード
-		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/main.jsp");
-		dispatcher.forward(request, response);
-		
-		
-		
+		 // 入力値チェック
+	    if (text != null && text.length() != 0) {
+	        
+	        // アプリケーションスコープに保存された投稿を取得
+	        ServletContext application = this.getServletContext();
+	        List<Mutter> mutterList = (List<Mutter>) application.getAttribute("mutterList");
+	        
+	        // セッションスコープに保存されたユーザー情報を取得
+	        HttpSession session = request.getSession();
+	        User loginUser = (User) session.getAttribute("loginUser");
+	        
+	        // 投稿を作成して投稿リストに追加
+	        Mutter mutter = new Mutter(loginUser.getName(), text, bmi, bodyType);
+	        PostMutterLogic postMutterLogic = new PostMutterLogic();
+	        postMutterLogic.execute(mutter, mutterList);
+	        
+	        // アプリケーションスコープに投稿リストを保存
+	        application.setAttribute("mutterList", mutterList);
+	    }
+	    
+	    // 確認画面にフォワード（現在確認画面中止）
+	    RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/main.jsp");
+	    dispatcher.forward(request, response);
 	}
 }
