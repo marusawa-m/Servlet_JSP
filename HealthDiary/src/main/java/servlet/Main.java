@@ -73,6 +73,9 @@ public class Main extends HttpServlet {
 		String height = request.getParameter("height");
 		
 		
+			// 入力値チェック
+		if (text != null && text.length() != 0) {
+		
 		// 身長、体重の入力値をプロパティに設定
 		Health health = new Health();
 		health.setHeight(Double.parseDouble(height));
@@ -86,10 +89,6 @@ public class Main extends HttpServlet {
 			request.setAttribute("health", health);
 			
 			
-			
-		// 入力値チェック
-		if (text != null && text.length() != 0) {
-			
 			// アプリケーションスコープに保存された投稿を取得
 			ServletContext application = this.getServletContext();
 			List<Mutter> mutterList = (List<Mutter>)application.getAttribute("mutterList");
@@ -97,12 +96,14 @@ public class Main extends HttpServlet {
 			// セッションスコープに保存されたユーザー情報を取得
 			HttpSession session = request.getSession();
 			User loginUser = (User)session.getAttribute("loginUser");
-			Health health = (Health)session.getAttribute("Health");			// この行は？
+			Health health1 = (Health)session.getAttribute("Health");			// この行は？
 		
 			// 投稿を作成して投稿リストに追加
 		// ここにBMIの算出を入れたい
 			Mutter mutter = new Mutter(loginUser.getName(), text);
-			Health health = new Health(health.getBmi(), health.getBodyType());	// この行はsetができない
+//			Health health2 = new Health(BmiCheckLogic.getBmi(), BmiCheckLogic.getBodyType());// この行はsetができない
+			double bmi = health.getBmi();
+			String bodyType = health.getBodyType();
 			PostMutterLogic postMutterLogic = new PostMutterLogic();
 			postMutterLogic.execute(mutter, mutterList);
 			
