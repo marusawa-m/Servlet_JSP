@@ -12,7 +12,7 @@
 
 <h1>毎日の健康日記</h1>
 
-	<form action ="Login" method ="post">
+	<form action="Login" method="post">
 		ユーザー名：<input type="text" name="name">
 		<br>
 		パスワード：<input type="password" name="pass">
