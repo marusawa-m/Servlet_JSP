@@ -8,8 +8,6 @@
     <%-- リクエストスコープに保存されたHealthインスタンスを取得 --%>
     <% Health health = (Health)request.getAttribute("health"); %>
     
-    <%-- アプリケーションスコープに保存された投稿リストを取得 --%>
-    <% (List<Mutter>)application.getAttribute("mutterList"); %>
     
 <!DOCTYPE html>
 <html>
@@ -35,6 +33,7 @@
 		
 		// 体調評価の結果
 		// 体温・メモの入力済
+		
 		
 </p>
 
