@@ -15,8 +15,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import model.BmiCheckLogic;
-import model.Health;
 import model.Mutter;
 import model.PostMutterLogic;
 import model.User;
@@ -61,6 +59,9 @@ public class Main extends HttpServlet {
 
 	}
 	
+// ここまでOK
+	
+// 以下未定
 	
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
@@ -75,18 +76,18 @@ public class Main extends HttpServlet {
 		
 			// 入力値チェック
 		if (text != null && text.length() != 0) {
-		
-		// 身長、体重の入力値をプロパティに設定
-		Health health = new Health();
-		health.setHeight(Double.parseDouble(height));
-		health.setWeight(Double.parseDouble(weight));
-		
-		// BMIチェックをして結果を設定
-			BmiCheckLogic bmiCheckLogic = new BmiCheckLogic();
-			bmiCheckLogic.execute(health);
-
-			// セッションスコープに保存
-			request.setAttribute("health", health);
+//		
+//		// 身長、体重の入力値をプロパティに設定
+//		Health health = new Health();
+//		health.setHeight(Double.parseDouble(height));
+//		health.setWeight(Double.parseDouble(weight));
+//		
+//		// BMIチェックをして結果を設定
+//			BmiCheckLogic bmiCheckLogic = new BmiCheckLogic();
+//			bmiCheckLogic.execute(health);
+//
+//			// セッションスコープに保存
+//			request.setAttribute("health", health);
 			
 			
 			// アプリケーションスコープに保存された投稿を取得
@@ -96,14 +97,15 @@ public class Main extends HttpServlet {
 			// セッションスコープに保存されたユーザー情報を取得
 			HttpSession session = request.getSession();
 			User loginUser = (User)session.getAttribute("loginUser");
-			Health health1 = (Health)session.getAttribute("Health");			// この行は？
+//			Health health1 = (Health)session.getAttribute("Health");			// この行は？
 		
 			// 投稿を作成して投稿リストに追加
 		// ここにBMIの算出を入れたい
 			Mutter mutter = new Mutter(loginUser.getName(), text);
-//			Health health2 = new Health(BmiCheckLogic.getBmi(), BmiCheckLogic.getBodyType());// この行はsetができない
-			double bmi = health.getBmi();
-			String bodyType = health.getBodyType();
+			// この以下の行はsetができない
+//			Health health2 = new Health(BmiCheckLogic.getBmi(), BmiCheckLogic.getBodyType());
+//			double bmi = health.getBmi();
+//			String bodyType = health.getBodyType();
 			PostMutterLogic postMutterLogic = new PostMutterLogic();
 			postMutterLogic.execute(mutter, mutterList);
 			
