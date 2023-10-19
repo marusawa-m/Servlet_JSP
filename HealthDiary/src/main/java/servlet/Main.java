@@ -59,7 +59,8 @@ public class Main extends HttpServlet {
 
 	}
 	
-// ここまでOK
+// ここまでログインされているかの確認をする、メイン画面ビューを出力するまでの道筋
+	
 	
 // 以下未定
 	
@@ -116,7 +117,7 @@ public class Main extends HttpServlet {
 		
 		
 		// 確認画面にフォワード
-		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/check.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/main.jsp");
 		dispatcher.forward(request, response);
 		
 		
