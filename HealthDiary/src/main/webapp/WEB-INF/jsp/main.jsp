@@ -49,8 +49,9 @@
 		<input type="submit" value="確認">
 		</form>
 		<% for (Mutter mutter : mutterList) { %>
-		<p><%= mutter.getUserName() %>：<%= mutter.getText() %></p>
-		<%} %>
+		<p><%= mutter.getUserName() %>：<%= mutter.getText() %>
+		BMI: <%= mutter.getBmi() %> 体型: <%= mutter.getBodyType() %></p>
+		<% } %>
 		
 
 </body>
