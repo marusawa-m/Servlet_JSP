@@ -25,4 +25,5 @@ public class BmiCheckLogic {
 		health.setBodyType(bodyType);
 	}
 
+
 }
