@@ -24,41 +24,29 @@
 <p>
 	<%= loginUser.getName() %> さん、ログイン中
 	<br><br>
-	<a href="LogoutServlet">LOGOUT</a>
+	<a href="LogoutServlet">LOGOUT</a>　<a href="Main">更新</a>
 </p>
-	<p><a href="Main">更新</a></p>
 	
 		<form action="Main" method="post">
 	
 		<%-- BMI測定 --%>
-		身長:<input type="text" name="height">(cm)
+		身長:<input type="text" name="height">(cm/ 例:160.1)
 		<br>
-		体重:<input type="text" name="weight">(kg)
+		体重:<input type="text" name="weight">(kg/ 例:65.3)
 		<br>
 		
-		<%-- 体調の評価ボタンをここに入れる --%>
-		 <p>体調の評価:</p>
-	    <input type="radio" name="healthRating" value="good">良い
-	    <input type="radio" name="healthRating" value="average">普通
-	    <input type="radio" name="healthRating" value="poor">悪い
-	    <br>
-		
-		
-	
-		<%-- 以下メモ欄 --%>
+		<p>体調:
+	    <input type="radio" name="healthRating" value="very good">良い
+	    <input type="radio" name="healthRating" value="good">普通
+	    <input type="radio" name="healthRating" value="bad">悪い</p>
+	    
 		メモ欄:
-		<%-- 以下のはコメント欄（広め） --%>
-		<%-- <textarea name="example5" cols="30" rows="5" tabindex="1"></textarea> --%>
-		
-		<%-- 以下のは元のつぶやき欄 --%>
 		<input type="text" name="text" >
-		
-		<input type="submit" value="確認">
+		<br><br>
+		<input type="submit" value="投稿">	　<input type="reset" value="リセット"></p>
 		</form>
-		<% for (Mutter mutter : mutterList) { %>
-		<p><%= mutter.getUserName() %>：<%= mutter.getText() %>
-		BMI: <%= mutter.getBmi() %> 体型: <%= mutter.getBodyType() %></p>
-		<% } %>
+		
+   
 		
 
 </body>
