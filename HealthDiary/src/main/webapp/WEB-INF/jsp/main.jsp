@@ -28,6 +28,8 @@
 </p>
 	<p><a href="Main">更新</a></p>
 	
+		<form action="Main" method="post">
+	
 		<%-- BMI測定 --%>
 		身長:<input type="text" name="height">(cm)
 		<br>
@@ -38,8 +40,6 @@
 	
 		<%-- 以下メモ欄 --%>
 		メモ欄:
-		<form action="Main" method="post">
-		
 		<%-- 以下のはコメント欄（広め） --%>
 		<%-- <textarea name="example5" cols="30" rows="5" tabindex="1"></textarea> --%>
 		
