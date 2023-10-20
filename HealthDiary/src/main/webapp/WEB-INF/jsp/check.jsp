@@ -5,9 +5,10 @@
     
     <%@ page import="model.User, model.Mutter, model.Health, java.util.List" %>
     
-    <%-- リクエストスコープに保存されたHealthインスタンスを取得 --%>
-    <% Health health = (Health)request.getAttribute("health"); %>
-    
+    <%-- セッションスコープに保存されたユーザー情報を取得 --%>
+    <% User loginUser = (User)session.getAttribute("loginUser"); %>
+    <%-- アプリケーションスコープに保存された投稿リストを取得 --%>
+    <% List<Mutter> mutterList = (List<Mutter>)application.getAttribute("mutterList"); %>
     
 <!DOCTYPE html>
 <html>
@@ -19,20 +20,16 @@
 
 <h1>確認</h1>
 <p>
-		身長:
-		<%= health.getHeight() %>
-		<br>
-		体重:
-		<%= health.getWeight() %>
-		<br>
-		BMI:
-		<%= String.format("%.1f",health.getBmi()) %>
-		<br>
-		体型:
-		<%= health.getBodyType() %>
+		<% for (Mutter mutter : mutterList) { %>
 		
-		// 体調評価の結果
-		// 体温・メモの入力済
+		<p><%= mutter.getUserName() %>：<%= mutter.getText() %></p>
+		
+		<p>BMI: <%= String.format("%.1f",mutter.getBmi()) %> 体型: <%= mutter.getBodyType() %></p>
+		
+		<p>体調評価: <%= mutter.getHealthRating() %></p>
+		
+		<% } %>
+
 		
 		
 </p>
