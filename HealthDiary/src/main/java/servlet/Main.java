@@ -70,25 +70,27 @@ public class Main extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		
+		   double bmi = 0.0;  // 初期化
+		   String bodyType = "";  // 初期化
+
 		// リクエストパラメータの取得
 		request.setCharacterEncoding("UTF-8");
 		String text = request.getParameter("text");
 		String weightParam = request.getParameter("weight");
 		String heightParam = request.getParameter("height");
+		String healthRating = request.getParameter("healthRating");
 		
-		   double bmi = 0.0;  // 初期化
-		   String bodyType = "";  // 初期化
-
 		if (weightParam != null && !weightParam.trim().isEmpty() && heightParam 
 				!= null && !heightParam.trim().isEmpty()) {
 		    double weight = Double.parseDouble(weightParam);
 		    double height = Double.parseDouble(heightParam);
-			
+		    
 			// 身長、体重の入力値をプロパティに設定
 			Health health = new Health();
 			health.setHeight(height);
 			health.setWeight(weight);
-	
+		
+			
 			// BMIの計算したBmi~インスタンスを取得
 			BmiCheckLogic logic = new BmiCheckLogic();
 			logic.execute(health);
@@ -96,10 +98,10 @@ public class Main extends HttpServlet {
 			// BMIとbodyTypeを取得
 		    bmi = health.getBmi();
 		    bodyType = health.getBodyType();
+		    
 		} else if (weightParam == null || heightParam == null) {
 			
 			System.out.println("weightParam または heightParam がnullです");
-			
 		}
 		
 		else {
@@ -118,7 +120,7 @@ public class Main extends HttpServlet {
 	        User loginUser = (User) session.getAttribute("loginUser");
 	        
 	        // 投稿を作成して投稿リストに追加
-	        Mutter mutter = new Mutter(loginUser.getName(), text, bmi, bodyType);
+	        Mutter mutter = new Mutter(loginUser.getName(), text, bmi, bodyType, healthRating);
 	        PostMutterLogic postMutterLogic = new PostMutterLogic();
 	        postMutterLogic.execute(mutter, mutterList);
 	        
@@ -127,7 +129,7 @@ public class Main extends HttpServlet {
 	    }
 	    
 	    // 確認画面にフォワード（現在確認画面中止）
-	    RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/main.jsp");
+	    RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/check.jsp");
 	    dispatcher.forward(request, response);
 	}
 }
