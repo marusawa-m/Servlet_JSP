@@ -37,6 +37,13 @@
 		<br>
 		
 		<%-- 体調の評価ボタンをここに入れる --%>
+		 <p>体調の評価:</p>
+	    <input type="radio" name="healthRating" value="good">良い
+	    <input type="radio" name="healthRating" value="average">普通
+	    <input type="radio" name="healthRating" value="poor">悪い
+	    <br>
+		
+		
 	
 		<%-- 以下メモ欄 --%>
 		メモ欄:
