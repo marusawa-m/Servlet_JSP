@@ -10,13 +10,15 @@ public class Mutter implements Serializable {
 	private String text;		// メモ欄
 	public  double bmi;
 	public  String bodyType;
+	private String healthRating;  // 体調評価
 	
 
-	public Mutter (String userName, String text, double bmi, String bodyType) {
+	public Mutter (String userName, String text, double bmi, String bodyType, String healthRating) {
 		this.userName = userName;
 		this.text = text;
 		this.bmi = bmi;
 		this.bodyType = bodyType;
+		this.healthRating = healthRating;
 	}
 	
 	public String getUserName() {
@@ -30,5 +32,8 @@ public class Mutter implements Serializable {
 	}
 	public String getBodyType() {
 		return bodyType;
+	}
+	public String getHealthRating() {
+	        return healthRating;
 	}
 }
