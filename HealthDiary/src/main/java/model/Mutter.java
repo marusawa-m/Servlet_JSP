@@ -34,6 +34,6 @@ public class Mutter implements Serializable {
 		return bodyType;
 	}
 	public String getHealthRating() {
-	        return healthRating;
+	    return healthRating;
 	}
 }
