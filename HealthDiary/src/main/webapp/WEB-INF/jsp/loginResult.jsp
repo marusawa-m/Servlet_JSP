@@ -1,4 +1,4 @@
-<%-- ログイン成功画面のビュー --%>
+<%-- ログイン画面のビュー --%>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -19,14 +19,11 @@
 
 <h1>ログイン</h1>
 
-<% if (loginUser != null) { %>
-		<p>ログインに成功しました</p>
-		<p>ようこそ <%= loginUser.getName() %> さん</p>
-		<a href ="Main">今日の健康を投稿する</a>
-	<% } else { %>
-		<p>ログインに失敗しました</p>
-		<a href ="index.jsp">TOPへ</a>
-	<% } %>
+
+    <p>ログインに成功しました</p>
+    <p>ようこそ <%= loginUser.getName() %> さん</p>
+    <a href ="Main">今日の健康を投稿する</a>
+
 
 </body>
 </html>
