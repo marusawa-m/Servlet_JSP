@@ -62,9 +62,8 @@ public class Main extends HttpServlet {
 
 	}
 
+
 	
-	
-// 以下未定
 // 投稿をするためのメソッド	
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
@@ -128,7 +127,7 @@ public class Main extends HttpServlet {
 	        application.setAttribute("mutterList", mutterList);
 	    }
 	    
-	    // 確認画面にフォワード（現在確認画面中止）
+	    // 確認画面にフォワード
 	    RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/check.jsp");
 	    dispatcher.forward(request, response);
 	}
