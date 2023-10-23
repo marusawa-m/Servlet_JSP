@@ -2,7 +2,6 @@ package model;
 
 // ログイン処理を行うモデル
 
-import java.util.*;
 
 public class LoginLogic {
 	
