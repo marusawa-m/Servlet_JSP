@@ -13,7 +13,19 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>毎日の健康日記</title>
+<title>HealthDiary</title>
+
+<style type="text/css">
+h1 {
+    color: #6594e0;/*文字色*/
+  /*線の種類（点線）2px 線色*/
+  border-bottom: dashed 2px #6594e0;
+}
+</style>
+
+<link rel="stylesheet" type="text/css" href="style.css">
+
+
 </head>
 <body>
 
@@ -22,7 +34,8 @@
 
     <p>ログインに成功しました</p>
     <p>ようこそ <%= loginUser.getName() %> さん</p>
-    <a href ="Main">今日の健康を投稿する</a>
+    <a href ="Main" class="btn-partial-line">
+  <i class="fa fa-caret-right"></i>今日の健康を投稿する</a>
 
 
 </body>
