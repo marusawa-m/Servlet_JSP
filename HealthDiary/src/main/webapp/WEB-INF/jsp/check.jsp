@@ -34,7 +34,7 @@
 		
 </p>
 
-<a href="Main">return</a>
+<a href="Main">main</a>
 
 </body>
 </html>
