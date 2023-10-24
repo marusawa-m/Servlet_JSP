@@ -3,12 +3,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-    <%@ page import="model.User, model.Mutter, model.Health, java.util.List" %>
+    <%@ page import="model.User, model.Mutter, model.Health, java.util.List, java.text.SimpleDateFormat" %>
     
     <%-- セッションスコープに保存されたユーザー情報を取得 --%>
     <% User loginUser = (User)session.getAttribute("loginUser"); %>
     <%-- アプリケーションスコープに保存された投稿リストを取得 --%>
     <% List<Mutter> mutterList = (List<Mutter>)application.getAttribute("mutterList"); %>
+    <%-- 投稿する日付を取得 --%>
+    <% SimpleDateFormat date = new SimpleDateFormat("yy:MM:dd"); %>
     
 <!DOCTYPE html>
 <html>
@@ -27,6 +29,8 @@
 		<p>BMI: <%= String.format("%.1f",mutter.getBmi()) %> 体型: <%= mutter.getBodyType() %></p>
 		
 		<p>体調評価: <%= mutter.getHealthRating() %></p>
+		
+		<p><%= date %></p>
 		
 		<% } %>
 
