@@ -27,7 +27,7 @@ public class Mutter implements Serializable {
 		this.healthRating = healthRating;
 		this.date = date;
 		
-		SimpleDateFormat dateFormat = new SimpleDateFormat("yy:MM:dd");
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yy / MM / dd");
 		// SimpleDateFormatでフォーマット
         this.sdf = dateFormat.format(date); 
 	}
