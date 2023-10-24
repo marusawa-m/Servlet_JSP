@@ -47,9 +47,6 @@ public class RegisterUser extends HttpServlet {
 			RegisterUserLogic logic = new RegisterUserLogic();
 			logic.execute(registerUser);
 			
-			// 不要となったセッションスコープ内のインスタンスを削除
-			session.removeAttribute("registerUser");
-			
 			// 登録完了画面へフォワード先を設定
 			forwardPath = "WEB-INF/jsp/registerDone.jsp";
 			
