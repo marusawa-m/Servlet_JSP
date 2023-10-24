@@ -3,7 +3,9 @@ package servlet;
 // 投稿に関するリクエストを処理するコントローラ
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -96,7 +98,7 @@ public class Main extends HttpServlet {
 			Health health = new Health();
 			health.setHeight(height);
 			health.setWeight(weight);
-			
+
 			// BMIの計算したBmi~インスタンスを取得
 			BmiCheckLogic logic = new BmiCheckLogic();
 			logic.execute(health);
@@ -125,8 +127,14 @@ public class Main extends HttpServlet {
 	        HttpSession session = request.getSession();
 	        User loginUser = (User) session.getAttribute("loginUser");
 	        
-	        // 投稿を作成して投稿リストに追加
-	        Mutter mutter = new Mutter(loginUser.getName(), text, bmi, bodyType, healthRating);
+	        // 現在の日時を取得
+	        Date date = new Date();
+	        SimpleDateFormat dateFormat = new SimpleDateFormat("yy:MM:dd");
+	        String sdf = dateFormat.format(date);
+
+	 
+			// 投稿を作成して投稿リストに追加
+	        Mutter mutter = new Mutter(loginUser.getName(), text, bmi, bodyType, healthRating, date);
 	        PostMutterLogic postMutterLogic = new PostMutterLogic();
 	        postMutterLogic.execute(mutter, mutterList);
 	        
