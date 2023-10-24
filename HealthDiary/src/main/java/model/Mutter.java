@@ -4,25 +4,32 @@ package model;
 
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Mutter implements Serializable {
 	
-	private String userName;	// 投稿時の名前
-	private String text;		// メモ欄
+	private String userName;		// 投稿時の名前
+	private String text;			// メモ欄
 	public  double bmi;
 	public  String bodyType;
-	private String healthRating;  // 体調評価
-	private SimpleDateFormat date; // 投稿日時
+	private String healthRating;  	// 体調評価
+	private Date date; 				// 投稿日時取得用
+	private String sdf; 			// SimpleDateFormatでの投稿日時表記用
+
 	
 
 	public Mutter (String userName, String text, double bmi, String bodyType, String healthRating,
-					SimpleDateFormat date) {
+					Date date) {
 		this.userName = userName;
 		this.text = text;
 		this.bmi = bmi;
 		this.bodyType = bodyType;
 		this.healthRating = healthRating;
 		this.date = date;
+		
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yy:MM:dd");
+		// SimpleDateFormatでフォーマット
+        this.sdf = dateFormat.format(date); 
 	}
 	
 	public String getUserName() {
@@ -40,7 +47,12 @@ public class Mutter implements Serializable {
 	public String getHealthRating() {
 	    return healthRating;
 	}
-	public SimpleDateFormat date() {
+	
+	public String getSdf() {
+        return sdf;
+    }
+	
+	public Date getDate() {
 		return date;
 	}
 }
