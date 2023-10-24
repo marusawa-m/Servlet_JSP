@@ -52,12 +52,19 @@ public class Main extends HttpServlet {
 		
 		
 		if (loginUser == null) {	// ログインしていない場合
+			
 			// リダイレクト
 			response.sendRedirect("index.jsp");
+			
 		} else {					// ログイン済みの場合
+			
 			//フォワード
 			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/main.jsp");
 			dispatcher.forward(request, response);
+			
+			// 不要となったセッションスコープ内のユーザーインスタンスを削除
+			session.removeAttribute("registerUser");
+			
 		}
 
 	}
@@ -79,6 +86,7 @@ public class Main extends HttpServlet {
 		String heightParam = request.getParameter("height");
 		String healthRating = request.getParameter("healthRating");
 		
+		// 取得した体重と身長の型をString型からdouble型に変換
 		if (weightParam != null && !weightParam.trim().isEmpty() && heightParam 
 				!= null && !heightParam.trim().isEmpty()) {
 		    double weight = Double.parseDouble(weightParam);
@@ -88,7 +96,6 @@ public class Main extends HttpServlet {
 			Health health = new Health();
 			health.setHeight(height);
 			health.setWeight(weight);
-		
 			
 			// BMIの計算したBmi~インスタンスを取得
 			BmiCheckLogic logic = new BmiCheckLogic();
