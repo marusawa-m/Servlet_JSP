@@ -9,8 +9,7 @@
     <% User loginUser = (User)session.getAttribute("loginUser"); %>
     <%-- アプリケーションスコープに保存された投稿リストを取得 --%>
     <% List<Mutter> mutterList = (List<Mutter>)application.getAttribute("mutterList"); %>
-    <%-- 投稿する日付を取得 --%>
-    <% SimpleDateFormat date = new SimpleDateFormat("yy:MM:dd"); %>
+
     
 <!DOCTYPE html>
 <html>
@@ -30,7 +29,7 @@
 		
 		<p>体調評価: <%= mutter.getHealthRating() %></p>
 		
-		<p><%= date %></p>
+		<p><%= mutter.getSdf() %></p>
 		
 		<% } %>
 
