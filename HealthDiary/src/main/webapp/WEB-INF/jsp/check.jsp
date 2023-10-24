@@ -31,7 +31,7 @@ h1 {
 </head>
 <body>
 
-<h1>確認</h1>
+<h1>ヒストリー</h1>
 <p>
 		<% for (Mutter mutter : mutterList) { %>
 		<p><div class="balloon4">
