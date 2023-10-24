@@ -15,24 +15,50 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>毎日の健康日記</title>
+<title>HealthDiary</title>
+
+
+<style type="text/css">
+h1 {
+    color: #6594e0;/*文字色*/
+  /*線の種類（点線）2px 線色*/
+  border-bottom: dashed 2px #6594e0;
+}
+</style>
+
+<link rel="stylesheet" type="text/css" href="style.css">
+<%-- <style>/* ページ全体の背景色を設定 */
+
+</style> --%>
+
 </head>
 <body>
 
 <h1>メイン</h1>
 
 <p>
-	<%= loginUser.getName() %> さん、ログイン中
-	<br><br>
-	<a href="LogoutServlet">LOGOUT</a>　<a href="Main">更新</a>
-</p>
+	<p>ようこそ <%= loginUser.getName() %> さん！</p>
 	
-		<form action="Main" method="post">
+	<br>
+	
+　<a href="LogoutServlet" class="btn-partial-line">
+  <i class="fa fa-caret-right"></i>LOGOUT</a>　
+  
+  <a href="Main" class="btn-partial-line">
+  <i class="fa fa-caret-right"></i>RELOAD</a>　
+  
+  <a href="Checkservlet" class="btn-partial-line">
+  <i class="fa fa-caret-right"></i>HISTORY</a>
+</p>
+
+<p>	
+<br>
+		<form action="Main" method="post" class="my-form">
 	
 		<%-- BMI測定 --%>
-		身長:<input type="text" name="height">(cm/ 例:160.1)
+		身長:<input type="text" name="height">　<span class="this">(cm/ 例:160.1)</span>
 		<br>
-		体重:<input type="text" name="weight">(kg/ 例:65.3)
+		体重:<input type="text" name="weight">　<span class="this">(kg/ 例:65.3)</span>
 		<br>
 		
 		<p>体調:
@@ -45,7 +71,7 @@
 		<br><br>
 		<input type="submit" value="投稿">	　<input type="reset" value="リセット"></p>
 		</form>
-		
+</p>	
    
 		
 
