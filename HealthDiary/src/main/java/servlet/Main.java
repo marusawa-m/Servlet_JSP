@@ -64,8 +64,8 @@ public class Main extends HttpServlet {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/main.jsp");
 			dispatcher.forward(request, response);
 			
-			// 不要となったセッションスコープ内のユーザーインスタンスを削除
-			session.removeAttribute("registerUser");
+//			// 不要となったセッションスコープ内のユーザーインスタンスを削除
+//			session.removeAttribute("registerUser");
 			
 		}
 

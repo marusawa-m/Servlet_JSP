@@ -52,7 +52,7 @@ public class LoginServlet extends HttpServlet {
 	        session.setAttribute("loginUser", registerUser);
 	        
 	        // ログイン結果画面にフォワード
-	        RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/loginResult.jsp");
+	        RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/main.jsp");
 	        dispatcher.forward(request, response);
 		} else {
 			
