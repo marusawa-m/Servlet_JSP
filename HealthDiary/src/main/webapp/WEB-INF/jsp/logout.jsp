@@ -6,7 +6,18 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>健康日記 ログアウト</title>
+<title>HealthDiary ログアウト</title>
+
+<style type="text/css">
+h1 {
+    color: #6594e0;/*文字色*/
+  /*線の種類（点線）2px 線色*/
+  border-bottom: dashed 2px #6594e0;
+}
+</style>
+
+<link rel="stylesheet" type="text/css" href="style.css">
+
 </head>
 <body>
 
@@ -14,7 +25,8 @@
 
 <p>ログアウトしました</p>
 
-<a href="index.jsp">TOP</a>
+<a href="index.jsp" class="btn-partial-line">
+  <i class="fa fa-caret-right"></i>TOP</a>
 
 </body>
 </html>
