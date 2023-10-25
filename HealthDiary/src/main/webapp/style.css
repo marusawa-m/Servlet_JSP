@@ -2,12 +2,21 @@
 
 /* タイトルのスタイル */
 h1 {
-  color: #3c9144; /* テキスト色を緑に変更 */
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* フォントをシンプルで読みやすいものに変更 */
-  border-bottom: solid 2px #3c9144; /* 下線の色を緑に変更 */
+  color: #00aaff; /* 鮮やかな青色 */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  border-bottom: solid 2px #00aaff; /* 下線の青色 */
 }
 
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #e6f7ff; /* カルピスウォーターのような淡い水色の背景 */
+}
 
+/* メッセージバルーン */
 .balloon5 {
   width: 100%;
   margin: 1.5em 0;
@@ -20,10 +29,10 @@ h1 {
   width: 80px;
 }
 
-.balloon5 .faceicon img{
+.balloon5 .faceicon img {
   width: 100%;
   height: auto;
-  border: solid 3px #d7ebfe;
+  border: solid 3px #00aaff; /* 鮮やかな青のボーダー */
   border-radius: 50%;
 }
 
@@ -33,21 +42,21 @@ h1 {
 
 .says {
   display: inline-block;
-  position: relative; 
+  position: relative;
   margin: 5px 0 0 105px;
   padding: 17px 13px;
   border-radius: 12px;
-  background: #d7ebfe;
+  background: #cce6ff; /* カルピスウォーターのような淡い水色 */
 }
 
 .says:after {
   content: "";
   display: inline-block;
   position: absolute;
-  top: 18px; 
+  top: 18px;
   left: -24px;
   border: 12px solid transparent;
-  border-right: 12px solid #d7ebfe;
+  border-right: 12px solid #cce6ff; /* カルピスウォーターのような淡い水色のボーダー */
 }
 
 .says p {
@@ -61,25 +70,35 @@ h1 {
   font-weight: bold;
   padding: 0.25em 0.5em;
   text-decoration: none;
-  border-bottom: solid 3px #3c9144; /* ボタン下部のボーダーの色を緑に変更 */
-  border-left: solid 3px #3c9144; /* ボタン左部のボーダーの色を緑に変更 */
-  color: #3c9144; /* テキスト色を緑に変更 */
+  border-bottom: solid 3px #00aaff; /* 鮮やかな青のボトムボーダー */
+  border-left: solid 3px #00aaff; /* 鮮やかな青の左ボーダー */
+  color: #00aaff; /* 鮮やかな青のテキスト */
   transition: 0.4s;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* フォントをシンプルで読みやすいものに変更 */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .btn-partial-line:hover {
   padding-left: 0.7em;
   padding-right: 0.3em;
-  background: #3c9144; /* ホバー時の背景色を緑に変更 */
-  color: #fff; /* ホバー時のテキスト色を白に変更 */
+  background: #00aaff; /* ホバー時の背景色を鮮やかな青に変更 */
+  color: #fff; /* ホバー時のテキストを白に変更 */
 }
 
-/* 枠 */
 .my-form {
-  background-color: #e0f2e6; /* 背景色を淡い緑に変更 */
+  background-color: #fefefe; /* 非常に淡いグレー */
   padding: 20px;
-  border: 2px solid #3c9144; /* 枠線の色を緑に変更 */
+  border: 2px solid #00aaff; /* 鮮やかな青の枠線 */
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  padding: 30px;
+}
+
+/* 枠2 */
+.my-form2 {
+  background-color: #bbf0ff; /* より明るい水色 */
+  padding: 20px;
+  border: 2px solid #00aaff; /* 鮮やかな青の枠線 */
   border-radius: 15px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   display: inline-block;
@@ -92,10 +111,10 @@ h1 {
   font-weight: bold;
   padding: 0.25em 0;
   text-decoration: none;
-  color: #3c9144; /* テキスト色を緑に変更 */
+  color: #00aaff; /* 鮮やかな青のテキスト */
   position: relative;
   overflow: hidden;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* フォントをシンプルで読みやすいものに変更 */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .btn-border-bottom:before {
@@ -105,7 +124,7 @@ h1 {
   height: 3px;
   bottom: 0;
   left: 0;
-  background: #3c9144; /* ボーダーの色を緑に変更 */
+  background: #00aaff; /* 鮮やかな青のボーダー */
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s;
@@ -115,26 +134,25 @@ h1 {
   transform: scaleX(1);
 }
 
-/* より躍動的なボタンスタイル */
 /* ログインボタンスタイル */
 .btn-circle-forest {
   display: inline-block;
   text-decoration: none;
-  color: #fff; /* テキスト色を白に設定 */
-  background: #4caf50; /* ボタンの背景色を緑に変更 */
-  width: 120px; /* ボタンの幅を調整 */
-  height: 50px; /* ボタンの高さを調整 */
-  line-height: 50px; /* テキストの垂直中央揃えを設定 */
-  border-radius: 25px; /* ボタンを丸くする */
+  color: #fff; /* 白いテキスト */
+  background: #2bd8d8; /* 爽やかな青緑色 */
+  width: 120px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 25px;
   text-align: center;
   font-weight: bold;
   transition: 0.4s;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* フォントをシンプルで読みやすいものに変更 */
-  border: none; /* ボーダーを削除 */
-  cursor: pointer; /* マウスを重ねるとカーソルがポインターになる */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  border: none;
+  cursor: pointer;
 }
 
 .btn-circle-forest:hover {
-  background: #259b24; /* ホバー時の背景色をより濃い緑に変更 */
-  color: #fff; /* ホバー時のテキスト色を白に変更 */
+  background: #00aaff;
+  color: #fff;
 }
