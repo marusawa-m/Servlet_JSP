@@ -13,6 +13,8 @@
 </head>
 <body>
 
+<div class="my-form">
+
 <h1>ログアウト</h1>
 
 <br>
@@ -24,5 +26,6 @@
 <a href="index.jsp" class="btn-partial-line">
   <i class="fa fa-caret-right"></i>TOP</a>
 
+</div>
 </body>
 </html>
