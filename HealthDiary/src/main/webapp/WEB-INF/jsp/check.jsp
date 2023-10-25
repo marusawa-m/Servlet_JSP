@@ -37,7 +37,7 @@
         <div class="says">
 		<p><%= mutter.getText() %></p>
 		
-		<br>
+		<hr> <!-- ここで横線を挿入 -->
 				
 		<p>今の体調：<%= mutter.getHealthRating() %>
 		 ｜ BMI：<%= String.format("%.1f",mutter.getBmi()) %>（体型：<%= mutter.getBodyType() %>）</p>
