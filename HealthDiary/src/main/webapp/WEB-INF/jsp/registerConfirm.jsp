@@ -20,12 +20,14 @@
 </head>
 <body>
 
+<div class="my-form">
+
 <h1>チェック</h1>
 
 	<p>下記で登録しますか？</p>
 	
 	
-	<p class="my-form">user name：<%= registerUser.getName() %><br>
+	<p class="my-form2">user name：<%= registerUser.getName() %><br>
 	password：<%= registerUser.getPass() %></p>
 	
 	<br><br>
@@ -36,6 +38,6 @@
 	<a href="RegisterUser?action=done" class="btn-partial-line">
   <i class="fa fa-caret-right"></i>>JOIN</a>
 	
-
+</div>
 </body>
 </html>
