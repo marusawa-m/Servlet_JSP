@@ -1,34 +1,58 @@
 @charset "UTF-8";
 
-/* バルーンスタイル */
-.balloon4 {
-  position: relative;
-  margin: 2em 0 2em 40px;
-  padding: 15px;
-  background: #fff0c6;
-  border-radius: 30px;
+/* タイトルのスタイル */
+h1 {
+  color: #3c9144; /* テキスト色を緑に変更 */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* フォントをシンプルで読みやすいものに変更 */
+  border-bottom: solid 2px #3c9144; /* 下線の色を緑に変更 */
 }
 
-.balloon4:before {
-  content: "";
-  position: absolute;
-  left: -38px;
-  width: 13px;
-  height: 12px;
-  bottom: 0;
-  background: #fff0c6;
+
+.balloon5 {
+  width: 100%;
+  margin: 1.5em 0;
+  overflow: hidden;
+}
+
+.balloon5 .faceicon {
+  float: left;
+  margin-right: -90px;
+  width: 80px;
+}
+
+.balloon5 .faceicon img{
+  width: 100%;
+  height: auto;
+  border: solid 3px #d7ebfe;
   border-radius: 50%;
 }
 
-.balloon4:after {
+.balloon5 .chatting {
+  width: 100%;
+}
+
+.says {
+  display: inline-block;
+  position: relative; 
+  margin: 5px 0 0 105px;
+  padding: 17px 13px;
+  border-radius: 12px;
+  background: #d7ebfe;
+}
+
+.says:after {
   content: "";
+  display: inline-block;
   position: absolute;
+  top: 18px; 
   left: -24px;
-  width: 20px;
-  height: 18px;
-  bottom: 3px;
-  background: #fff0c6;
-  border-radius: 50%;
+  border: 12px solid transparent;
+  border-right: 12px solid #d7ebfe;
+}
+
+.says p {
+  margin: 0;
+  padding: 0;
 }
 
 /* ボタンスタイル */
@@ -37,56 +61,80 @@
   font-weight: bold;
   padding: 0.25em 0.5em;
   text-decoration: none;
-  border-bottom: solid 3px #668ad8;
-  border-left: solid 3px #668ad8;
-  color: #668ad8;
+  border-bottom: solid 3px #3c9144; /* ボタン下部のボーダーの色を緑に変更 */
+  border-left: solid 3px #3c9144; /* ボタン左部のボーダーの色を緑に変更 */
+  color: #3c9144; /* テキスト色を緑に変更 */
   transition: 0.4s;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* フォントをシンプルで読みやすいものに変更 */
 }
 
 .btn-partial-line:hover {
   padding-left: 0.7em;
   padding-right: 0.3em;
-}
-
-/* 注意書き */
-.this {
-  color: darkgray;
+  background: #3c9144; /* ホバー時の背景色を緑に変更 */
+  color: #fff; /* ホバー時のテキスト色を白に変更 */
 }
 
 /* 枠 */
 .my-form {
-    background-color: #f2f2f2; /* 比較的明るい背景色 */
+  background-color: #e0f2e6; /* 背景色を淡い緑に変更 */
   padding: 20px;
-  border: 2px solid #668ad8; /* コントラストのある枠線 */
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 影の効果を追加 */
-    display: inline-block; /* テキストに合わせてサイズ調整 */
-  padding: 30px; /* ボーダーとテキストの間にスペースを設定 */
+  border: 2px solid #3c9144; /* 枠線の色を緑に変更 */
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  padding: 30px;
 }
 
-
+/* 新しいボタンスタイル */
 .btn-border-bottom {
-  position: relative;
   display: inline-block;
   font-weight: bold;
   padding: 0.25em 0;
   text-decoration: none;
-  color: #67c5ff;  
+  color: #3c9144; /* テキスト色を緑に変更 */
+  position: relative;
+  overflow: hidden;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* フォントをシンプルで読みやすいものに変更 */
 }
 
 .btn-border-bottom:before {
+  content: "";
   position: absolute;
-  content: '';
   width: 100%;
-  height: 4px;
-  top:100%;
+  height: 3px;
+  bottom: 0;
   left: 0;
-  border-radius: 3px;
-  background:#67c5ff;
-  transition: .2s;
+  background: #3c9144; /* ボーダーの色を緑に変更 */
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s;
 }
 
 .btn-border-bottom:hover:before {
-  top: -webkit-calc(100% - 3px);
-  top: calc(100% - 3px);
+  transform: scaleX(1);
+}
+
+/* より躍動的なボタンスタイル */
+/* ログインボタンスタイル */
+.btn-circle-forest {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff; /* テキスト色を白に設定 */
+  background: #4caf50; /* ボタンの背景色を緑に変更 */
+  width: 120px; /* ボタンの幅を調整 */
+  height: 50px; /* ボタンの高さを調整 */
+  line-height: 50px; /* テキストの垂直中央揃えを設定 */
+  border-radius: 25px; /* ボタンを丸くする */
+  text-align: center;
+  font-weight: bold;
+  transition: 0.4s;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* フォントをシンプルで読みやすいものに変更 */
+  border: none; /* ボーダーを削除 */
+  cursor: pointer; /* マウスを重ねるとカーソルがポインターになる */
+}
+
+.btn-circle-forest:hover {
+  background: #259b24; /* ホバー時の背景色をより濃い緑に変更 */
+  color: #fff; /* ホバー時のテキスト色を白に変更 */
 }
