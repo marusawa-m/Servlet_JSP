@@ -14,6 +14,8 @@
 </head>
 <body>
 
+<div class="my-form">
+
 <h1>Health Diary</h1>
   
   <br>
@@ -31,6 +33,6 @@
   
 		　　<input type="submit" value="ログイン" class="btn-circle-forest"></p>
 	</form>
-
+</div>
 </body>
 </html>
