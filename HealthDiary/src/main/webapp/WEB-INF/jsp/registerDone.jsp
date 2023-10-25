@@ -13,14 +13,6 @@
 <meta charset="UTF-8">
 <title>HealthDiary</title>
 
-<style type="text/css">
-h1 {
-    color: #6594e0;/*文字色*/
-  /*線の種類（点線）2px 線色*/
-  border-bottom: dashed 2px #6594e0;
-}
-</style>
-
 <link rel="stylesheet" type="text/css" href="style.css">
 
 </head>
