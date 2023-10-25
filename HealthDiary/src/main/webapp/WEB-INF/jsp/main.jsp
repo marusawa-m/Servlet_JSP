@@ -19,12 +19,11 @@
 
 
 <link rel="stylesheet" type="text/css" href="style.css">
-<%-- <style>/* ページ全体の背景色を設定 */
-
-</style> --%>
 
 </head>
 <body>
+
+<div class="my-form">
 
 <h1>メイン</h1>
 
@@ -45,7 +44,7 @@
 
 <p>	
 <br>
-		<form action="Main" method="post" class="my-form">
+		<form action="Main" method="post" class="my-form2">
 		    
 		ひと言：
 		<input type="text" name="text" >
@@ -68,6 +67,6 @@
 </p>	
    
 		
-
+</div>
 </body>
 </html>
