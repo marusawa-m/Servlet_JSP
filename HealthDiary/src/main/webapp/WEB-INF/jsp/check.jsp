@@ -17,13 +17,6 @@
 <meta charset="UTF-8">
 <title>HealthDiary</title>
 
-<style type="text/css">
-h1 {
-    color: #6594e0;/*文字色*/
-  /*線の種類（点線）2px 線色*/
-  border-bottom: dashed 2px #6594e0;
-}
-</style>
 
 <link rel="stylesheet" type="text/css" href="style.css">
 
@@ -34,15 +27,21 @@ h1 {
 <h1>ヒストリー</h1>
 <p>
 		<% for (Mutter mutter : mutterList) { %>
-		<p><div class="balloon4">
-		<p><%= mutter.getUserName() %>：<%= mutter.getText() %></p>
+		 <div class="balloon5">
+      <div class="faceicon">
+        //ここに入れる
+      </div>
+      <div class="chatting">
+        <div class="says">
+		<p><%= mutter.getText() %></p>
 		
-		<p>BMI: <%= String.format("%.1f",mutter.getBmi()) %> 体型: <%= mutter.getBodyType() %></p>
-		
-		<p>体調評価: <%= mutter.getHealthRating() %></p>
-		
-		<p><%= mutter.getSdf() %></p>
-		<p></p></div>
+		<br>
+				
+		<p>今の体調：<%= mutter.getHealthRating() %>
+		 ｜ BMI：<%= String.format("%.1f",mutter.getBmi()) %>（体型：<%= mutter.getBodyType() %>）</p>
+
+		<p><%= mutter.getSdf() %> ｜ <%= mutter.getUserName() %></p>
+		</div></div></div>
 		<% } %>
 
 		
