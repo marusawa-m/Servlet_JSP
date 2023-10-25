@@ -8,17 +8,6 @@
 <meta charset="UTF-8">
 <title>HealthDiary</title>
 
-<style type="text/css">
-input:focus {
-  background-color: #ddd;
-}
-
-h1 {
-   color: #6594e0;/*文字色*/
-  /*線の種類（点線）2px 線色*/
-  border-bottom: dashed 2px #6594e0;
-}
-</style>
 
 <link rel="stylesheet" type="text/css" href="style.css">
 
@@ -40,7 +29,7 @@ h1 {
 		<p><a href="RegisterUser" class="btn-partial-line">
  		 <i class="fa fa-caret-right"></i>サインアップはこちら</a>
   
-		　　<input type="submit" value="ログイン" ></p>
+		　　<input type="submit" value="ログイン" class="btn-circle-forest"></p>
 	</form>
 
 </body>
