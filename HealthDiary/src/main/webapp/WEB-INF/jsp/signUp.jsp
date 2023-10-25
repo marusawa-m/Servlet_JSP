@@ -19,6 +19,8 @@
 </head>
 <body>
 
+<div class="my-form">
+
 <h1>サインアップ</h1>
 
 <%-- エラーメッセージがある場合に表示 --%>
@@ -48,5 +50,6 @@
 	<input type="submit" value="チェック" class="btn-circle-forest"></p>
 		
 	</form>
+	</div>
 </body>
 </html>
