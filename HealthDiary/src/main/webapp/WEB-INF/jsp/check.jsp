@@ -24,12 +24,14 @@
 </head>
 <body>
 
+<div class="my-form">
+
 <h1>ヒストリー</h1>
 <p>
 		<% for (Mutter mutter : mutterList) { %>
 		 <div class="balloon5">
       <div class="faceicon">
-        //ここに入れる
+        <img alt="アイコン" src="images/bmi.jpg">
       </div>
       <div class="chatting">
         <div class="says">
@@ -51,5 +53,6 @@
 <a href="Main" class="btn-partial-line">
   <i class="fa fa-caret-right"></i>main</a>
 
+</div>
 </body>
 </html>
