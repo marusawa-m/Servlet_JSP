@@ -13,14 +13,6 @@
 <title>HealthDiary</title>
 
 
-<style type="text/css">
-h1 {
-    color: #6594e0;/*文字色*/
-  /*線の種類（点線）2px 線色*/
-  border-bottom: dashed 2px #6594e0;
-}
-</style>
-
 <link rel="stylesheet" type="text/css" href="style.css">
 
 
@@ -51,7 +43,9 @@ h1 {
 	<p>password：<input type="password" name="pass">
 	<span class="this">※半角英数字4桁</span></p>
 	
-	<input type="submit" value="チェック"></p>
+	<br>
+	
+	<input type="submit" value="チェック" class="btn-circle-forest"></p>
 		
 	</form>
 </body>
