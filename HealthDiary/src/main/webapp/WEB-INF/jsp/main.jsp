@@ -18,14 +18,6 @@
 <title>HealthDiary</title>
 
 
-<style type="text/css">
-h1 {
-    color: #6594e0;/*文字色*/
-  /*線の種類（点線）2px 線色*/
-  border-bottom: dashed 2px #6594e0;
-}
-</style>
-
 <link rel="stylesheet" type="text/css" href="style.css">
 <%-- <style>/* ページ全体の背景色を設定 */
 
@@ -54,22 +46,24 @@ h1 {
 <p>	
 <br>
 		<form action="Main" method="post" class="my-form">
-	
-		<%-- BMI測定 --%>
-		身長:<input type="text" name="height">　<span class="this">(cm/ 例:160.1)</span>
-		<br>
-		体重:<input type="text" name="weight">　<span class="this">(kg/ 例:65.3)</span>
-		<br>
+		    
+		ひと言：
+		<input type="text" name="text" >
 		
-		<p>体調:
+		<p>今の体調：
 	    <input type="radio" name="healthRating" value="very good">良い
 	    <input type="radio" name="healthRating" value="good">普通
 	    <input type="radio" name="healthRating" value="bad">悪い</p>
 	    
-		メモ欄:
-		<input type="text" name="text" >
+		<%-- BMI測定 --%>
+		身長：<input type="text" name="height">　<span class="this">(cm/ 例:160.1)</span>
+		<br>
+		体重：<input type="text" name="weight">　<span class="this">(kg/ 例:65.3)</span>
+		<br>
+	
 		<br><br>
-		<input type="submit" value="投稿">	　<input type="reset" value="リセット"></p>
+		<input type="submit" value="投稿" class="btn-circle-forest">
+			　<input type="reset" value="リセット" class="btn-circle-forest"></p>
 		</form>
 </p>	
    
