@@ -20,7 +20,7 @@
 </head>
 <body>
 
-<div class="my-form">
+<div class="my-form"><div class="content">
 
 <h1>チェック</h1>
 
@@ -38,6 +38,6 @@
 	<a href="RegisterUser?action=done" class="btn-partial-line">
   <i class="fa fa-caret-right"></i>>JOIN</a>
 	
-</div>
+</div></div>
 </body>
 </html>
