@@ -29,7 +29,7 @@
 		<br>
 		
 		<p><a href="RegisterUser" class="btn-partial-line">
- 		 <i class="fa fa-caret-right"></i>サインアップはこちら</a>
+ 		 <i class="fa fa-caret-right"></i>新規登録はこちら</a>
   
 		　　<input type="submit" value="ログイン" class="btn-circle-forest"></p>
 	</form>
