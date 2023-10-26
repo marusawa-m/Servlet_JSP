@@ -11,6 +11,7 @@ public class PostMutterLogic {
 		// 先頭に追加して投稿を保存
 		mutterList.add(0, mutter);
 		
+		
 	}
 
 }
