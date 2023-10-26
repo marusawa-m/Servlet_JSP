@@ -24,7 +24,7 @@
 </head>
 <body>
 
-<div class="my-form">
+<div class="my-form"><div class="content">
 
 <h1>ヒストリー</h1>
 <p>
@@ -45,14 +45,14 @@
 		<p><%= mutter.getSdf() %> ｜ <%= mutter.getUserName() %></p>
 		</div></div></div>
 		<% } %>
-
-		
 		
 </p>
+
+<br>
 
 <a href="Main" class="btn-partial-line">
   <i class="fa fa-caret-right"></i>main</a>
 
-</div>
+</div></div>
 </body>
 </html>
