@@ -13,19 +13,21 @@
 </head>
 <body>
 
-<div class="my-form">
+<div class="my-form"><div class="content">
 
 <h1>ログアウト</h1>
 
 <br>
 
 <p>Hava a nice day!</p>
+<p>よい1日をお過ごしください！</p>
+
 
 <br>
 
 <a href="index.jsp" class="btn-partial-line">
   <i class="fa fa-caret-right"></i>TOP</a>
 
-</div>
+</div></div>
 </body>
 </html>
