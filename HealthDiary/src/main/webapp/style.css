@@ -84,17 +84,25 @@ body {
   color: #fff; /* ホバー時のテキストを白に変更 */
 }
 
+/* 全体枠 */
 .my-form {
-  background-color: #fefefe; /* 非常に淡いグレー */
-  padding: 20px;
-  border: 2px solid #00aaff; /* 鮮やかな青の枠線 */
+  background-color: #fefefe;
+  border: 2px solid #00aaff;
   border-radius: 15px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  display: inline-block;
-  padding: 30px;
+  min-width: 600px;
+  min-height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* 枠2 */
+.content {
+  text-align: center; /* 内容を中央寄せ */
+}
+
+
+/* 中枠 */
 .my-form2 {
   background-color: #bbf0ff; /* より明るい水色 */
   padding: 20px;
@@ -156,3 +164,6 @@ body {
   background: #00aaff;
   color: #fff;
 }
+
+	
+
