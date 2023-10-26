@@ -20,6 +20,7 @@
 <body>
 
 <div class="my-form">
+<div class="content">
 
 <h1>サインアップ</h1>
 
@@ -42,14 +43,14 @@
 	
 	<p>user name：<input type="text" name="name"></p>
 		
-	<p>password：<input type="password" name="pass">
-	<span class="this">※半角英数字4桁</span></p>
+	<p>password：<input type="password" name="pass"></p>
+	<p style="color: gray;">※半角英数字4桁</p>
 	
 	<br>
 	
 	<input type="submit" value="チェック" class="btn-circle-forest"></p>
 		
 	</form>
-	</div>
+	</div></div>
 </body>
 </html>
