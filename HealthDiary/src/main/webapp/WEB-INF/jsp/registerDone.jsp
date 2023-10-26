@@ -18,7 +18,7 @@
 </head>
 <body>
 
-<div class="my-form">
+<div class="my-form"><div class="content">
 
 	<h1>ウェルカム <%= registerUser.getName() %> !</h1>
 	
@@ -31,6 +31,6 @@
 	<a href="index.jsp" class="btn-partial-line">
 	  <i class="fa fa-caret-right"></i>TOP</a>
 
-</div>
+</div></div>
 </body>
 </html>
