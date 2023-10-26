@@ -138,6 +138,13 @@ public class Main extends HttpServlet {
 	        PostMutterLogic postMutterLogic = new PostMutterLogic();
 	        postMutterLogic.execute(mutter, mutterList);
 	        
+	        // 最大投稿数を制限
+	        int maxPosts = 3;
+	        if (mutterList.size() > maxPosts) {
+	            mutterList.subList(maxPosts, mutterList.size()).clear();
+	        }
+
+	        
 	        // アプリケーションスコープに投稿リストを保存
 	        application.setAttribute("mutterList", mutterList);
 	    }
