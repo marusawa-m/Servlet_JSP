@@ -23,7 +23,7 @@
 </head>
 <body>
 
-<div class="my-form">
+<div class="my-form"><div class="content">
 
 <h1>メイン</h1>
 
@@ -55,18 +55,18 @@
 	    <input type="radio" name="healthRating" value="bad">悪い</p>
 	    
 		<%-- BMI測定 --%>
-		身長：<input type="text" name="height">　<span class="this">(cm/ 例:160.1)</span>
-		<br>
-		体重：<input type="text" name="weight">　<span class="this">(kg/ 例:65.3)</span>
-		<br>
+		身長：<input type="text" name="height">
+		<p style="color: gray;">(cm/ 例:160.1)</p>
+		体重：<input type="text" name="weight">
+		<p style="color: gray;">(kg/ 例:65.3)</p>
 	
-		<br><br>
+		
 		<input type="submit" value="投稿" class="btn-circle-forest">
 			　<input type="reset" value="リセット" class="btn-circle-forest"></p>
 		</form>
 </p>	
    
 		
-</div>
+</div></div>
 </body>
 </html>
